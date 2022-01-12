@@ -5,39 +5,30 @@ class Game {
     this.currentPlayer = Math.random() < 0.5;
     this.board = [
       {
-        position: 1,
         value: ''
       },
       {
-        position: 2,
         value: ''
       },
       {
-        position: 3,
         value: ''
       },
       {
-        position: 4,
         value: ''
       },
       {
-        position: 5,
         value: ''
       },
       {
-        position: 6,
         value: ''
       },
       {
-        position: 7,
         value: ''
       },
       {
-        position: 8,
         value: ''
       },
       {
-        position: 9,
         value: ''
       }
     ];
@@ -65,15 +56,37 @@ class Game {
   }
 
   checkBoard() {
+
     if(this.board[0].value === this.board[1].value && this.board[0].value === this.board[2].value) {
-      if(this.board.value === this.player1.token) {
+      if(this.board[0].value === this.player1.token) {
         this.player1.wins.push(1);
-        console.log(`Congratulations ${this.player1.token} you won`)
+        console.log(`Congratulations ${this.player1.token} you won`);
       } else {
         this.player2.wins.push(1);
-        console.log(`Congratulations ${this.player2.token} you won`)
+        console.log(`Congratulations ${this.player2.token} you won`);
       }
     }
+
+    if(this.board[3].value === this.board[4].value && this.board[3].value === this.board[5].value) {
+      if(this.board[3].value === this.player1.token) {
+        this.player1.wins.push(1);
+        console.log(`Congratulations ${this.player1.token} you won`);
+      } else {
+        this.player2.wins.push(1);
+        console.log(`Congratulations ${this.player2.token} you won`);
+      }
+    }
+
+    if(this.board[6].value === this.board[7].value && this.board[6].value === this.board[8].value) {
+      if(this.board[6].value === this.player1.token) {
+        this.player1.wins.push(1);
+        console.log(`Congratulations ${this.player1.token} you won`);
+      } else {
+        this.player2.wins.push(1);
+        console.log(`Congratulations ${this.player2.token} you won`);
+      }
+    }
+    
   }
 
 }
