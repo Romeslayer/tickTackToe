@@ -60,6 +60,20 @@ class Game {
       this.board[position].value = this.player2.token;
       this.changeTurn();
     }
+
+    this.checkBoard();
+  }
+
+  checkBoard() {
+    if(this.board[0].value === this.board[1].value && this.board[0].value === this.board[2].value) {
+      if(this.board.value === this.player1.token) {
+        this.player1.wins.push(1);
+        console.log(`Congratulations ${this.player1.token} you won`)
+      } else {
+        this.player2.wins.push(1);
+        console.log(`Congratulations ${this.player2.token} you won`)
+      }
+    }
   }
 
 }
