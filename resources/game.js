@@ -48,11 +48,17 @@ class Game {
     return (this.currentPlayer ? `It's ${this.player1.token}'s turn'` : `It's ${this.player2.token}'s turn'`);
   }
 
+  changeTurn() {
+    this.currentPlayer = !this.currentPlayer;
+  }
+
   takeTurn(position) {
     if(this.currentPlayer) {
       this.board[position].value = this.player1.token;
+      this.changeTurn();
     } else {
       this.board[position].value = this.player2.token;
+      this.changeTurn();
     }
   }
 
