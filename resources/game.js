@@ -44,15 +44,19 @@ class Game {
   }
 
   takeTurn(position) {
-    if (this.currentPlayer) {
-      this.board[position].value = this.player1.token;
-      this.changeTurn();
-    } else {
-      this.board[position].value = this.player2.token;
-      this.changeTurn();
+    if(!this.board[position].value) {
+      if (this.currentPlayer) {
+        this.board[position].value = this.player1.token;
+        this.changeTurn();
+      } else {
+        this.board[position].value = this.player2.token;
+        this.changeTurn();
+      }
+
+      this.checkBoard();
     }
 
-    this.checkBoard();
+
   }
 
   checkBoard() {
