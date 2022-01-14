@@ -117,16 +117,25 @@ class Game {
   }
 
   win(position) {
-    if(this.board[position].value === this.player1.token) {
+    if (this.board[position].value === this.player1.token) {
       this.player1.wins.push(this.board);
       console.log(`Congratulations ${this.player1.token} you won!`);
+      this.clearBoard();
     } else if (this.board[position].value === this.player2.token) {
       this.player2.wins.push(this.board);
       console.log(`Congratulations ${this.player2.token} you won!`);
+      this.clearBoard();
     }
   }
 
   draw() {
     console.log(`You're both losers lul.`);
+    this.clearBoard();
+  }
+
+  clearBoard() {
+    for (var i = 0; i < this.board.length; i++) {
+      this.board[i].value = '';
+    }
   }
 }
