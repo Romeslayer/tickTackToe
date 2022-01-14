@@ -60,6 +60,7 @@ class Game {
   }
 
   checkBoard() {
+    var boardFull = false;
     if (this.board[0].value === this.board[1].value && this.board[0].value === this.board[2].value) {
       this.win(0);
     }
@@ -92,6 +93,17 @@ class Game {
       this.win(2);
     }
 
+    //Need to check if all positions are filled.
+    for (var i = 0; i < this.board.length; i++) {
+      if (this.board[i].value) {
+        boardFull = true;
+      } else {
+        boardFull = false;
+        break;
+      }
+    }
+
+    if (boardFull) this.draw();
 // To get the first row I = 0,1,2
 //  To get the second row I = 3,4,5
 // To get the third row I = 6,7,8
@@ -107,10 +119,14 @@ class Game {
   win(position) {
     if(this.board[position].value === this.player1.token) {
       this.player1.wins.push(this.board);
-      console.log(`Congratulations ${this.player1.token} you won`);
-    } else {
+      console.log(`Congratulations ${this.player1.token} you won!`);
+    } else if (this.board[position].value === this.player2.token) {
       this.player2.wins.push(this.board);
-      console.log(`Congratulations ${this.player2.token} you won`);
+      console.log(`Congratulations ${this.player2.token} you won!`);
     }
+  }
+
+  draw() {
+    console.log(`You're both losers lul.`);
   }
 }
