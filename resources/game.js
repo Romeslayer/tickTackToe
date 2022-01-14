@@ -44,7 +44,7 @@ class Game {
   }
 
   takeTurn(position) {
-    if(this.currentPlayer) {
+    if (this.currentPlayer) {
       this.board[position].value = this.player1.token;
       this.changeTurn();
     } else {
@@ -56,84 +56,36 @@ class Game {
   }
 
   checkBoard() {
-    if(this.board[0].value === this.board[1].value && this.board[0].value === this.board[2].value) {
-      if(this.board[0].value === this.player1.token) {
-        this.player1.wins.push(1);
-        console.log(`Congratulations ${this.player1.token} you won`);
-      } else {
-        this.player2.wins.push(1);
-        console.log(`Congratulations ${this.player2.token} you won`);
-      }
+    if (this.board[0].value === this.board[1].value && this.board[0].value === this.board[2].value) {
+      this.win(0);
     }
 
-    if(this.board[3].value === this.board[4].value && this.board[3].value === this.board[5].value) {
-      if(this.board[3].value === this.player1.token) {
-        this.player1.wins.push(1);
-        console.log(`Congratulations ${this.player1.token} you won`);
-      } else {
-        this.player2.wins.push(1);
-        console.log(`Congratulations ${this.player2.token} you won`);
-      }
+    if (this.board[3].value === this.board[4].value && this.board[3].value === this.board[5].value) {
+      this.win(3);
     }
 
-    if(this.board[6].value === this.board[7].value && this.board[6].value === this.board[8].value) {
-      if(this.board[6].value === this.player1.token) {
-        this.player1.wins.push(1);
-        console.log(`Congratulations ${this.player1.token} you won`);
-      } else {
-        this.player2.wins.push(1);
-        console.log(`Congratulations ${this.player2.token} you won`);
-      }
+    if (this.board[6].value === this.board[7].value && this.board[6].value === this.board[8].value) {
+      this.win(6);
     }
 
-    if(this.board[0].value === this.board[3].value && this.board[0].value === this.board[6].value) {
-      if(this.board[0].value === this.player1.token) {
-        this.player1.wins.push(1);
-        console.log(`Congratulations ${this.player1.token} you won`);
-      } else {
-        this.player2.wins.push(1);
-        console.log(`Congratulations ${this.player2.token} you won`);
-      }
+    if (this.board[0].value === this.board[3].value && this.board[0].value === this.board[6].value) {
+      this.win(0);
     }
 
-    if(this.board[1].value === this.board[4].value && this.board[1].value === this.board[7].value) {
-      if(this.board[1].value === this.player1.token) {
-        this.player1.wins.push(1);
-        console.log(`Congratulations ${this.player1.token} you won`);
-      } else {
-        this.player2.wins.push(1);
-        console.log(`Congratulations ${this.player2.token} you won`);
-      }
+    if (this.board[1].value === this.board[4].value && this.board[1].value === this.board[7].value) {
+      this.win(1);
     }
 
-    if(this.board[2].value === this.board[5].value && this.board[2].value === this.board[8].value) {
-      if(this.board[2].value === this.player1.token) {
-        this.player1.wins.push(1);
-        console.log(`Congratulations ${this.player1.token} you won`);
-      } else {
-        this.player2.wins.push(1);
-        console.log(`Congratulations ${this.player2.token} you won`);
-      }
+    if (this.board[2].value === this.board[5].value && this.board[2].value === this.board[8].value) {
+      this.win(2);
     }
 
-    if(this.board[0].value === this.board[4].value && this.board[0].value === this.board[8].value) {
-      if(this.board[0].value === this.player1.token) {
-        this.player1.wins.push(1);
-        console.log(`Congratulations ${this.player1.token} you won`);
-      } else {
-        this.player2.wins.push(1);
-        console.log(`Congratulations ${this.player2.token} you won`);
-      }
+    if (this.board[0].value === this.board[4].value && this.board[0].value === this.board[8].value) {
+      this.win(0);
     }
 
-    if(this.board[2].value === this.board[4].value && this.board[2].value === this.board[6].value) {
-      if(this.board[2].value === this.player1.token) {
-        this.player1.wins.push(1);
-        console.log(`Congratulations ${this.player1.token} you won`);
-      } else {
-        this.player2.wins.push(1);
-        console.log(`Congratulations ${this.player2.token} you won`);
-      }
+    if (this.board[2].value === this.board[4].value && this.board[2].value === this.board[6].value) {
+      this.win(2);
     }
 
 // To get the first row I = 0,1,2
