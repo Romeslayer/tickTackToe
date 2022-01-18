@@ -35,7 +35,7 @@ function playTurn() {
 
 function displayBoard() {
   for (var i = 0; i < boardPositions.length; i++) {
-    boardPositions[i].innerHTML = `<p>${ticTacToe.board[i].value}</p>`;
+    boardPositions[i].innerHTML = `<p class="player-${ticTacToe.board[i].value === ticTacToe.player1.token ? '1' : '2'}-color">${ticTacToe.board[i].value}</p>`;
   }
 }
 
