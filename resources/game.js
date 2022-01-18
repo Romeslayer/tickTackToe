@@ -36,7 +36,7 @@ class Game {
 //Who goes first?
 // player1 or player2 needs to go first and be displayed on the DOM
   whosTurn() {
-    return (this.currentPlayer ? `It's ${this.player1.token}'s turn'` : `It's ${this.player2.token}'s turn'`);
+    return (this.currentPlayer ? `It's ${this.player1.token}'s turn` : `It's ${this.player2.token}'s turn`);
   }
 
   changeTurn() {
