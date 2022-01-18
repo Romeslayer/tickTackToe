@@ -33,8 +33,7 @@ class Game {
       }
     ];
   }
-//Who goes first?
-// player1 or player2 needs to go first and be displayed on the DOM
+
   whosTurn() {
     return (this.currentPlayer ? `It's ${this.player1.token}'s turn` : `It's ${this.player2.token}'s turn`);
   }
@@ -92,7 +91,7 @@ class Game {
     if (this.board[2].value === this.board[4].value && this.board[2].value === this.board[6].value) {
       return this.win(2);
     }
-    //Need to check if all positions are filled.
+
     for (var i = 0; i < this.board.length; i++) {
       if (this.board[i].value) {
         boardFull = true;
@@ -118,17 +117,14 @@ class Game {
     if (this.board[position].value === this.player1.token) {
       this.player1.wins.push(this.board);
       return `Congratulations ${this.player1.token} you won!`;
-      // this.clearBoard();
     } else if (this.board[position].value === this.player2.token) {
       this.player2.wins.push(this.board);
       return `Congratulations ${this.player2.token} you won!`;
-      // this.clearBoard();
     }
   }
 
   draw() {
     return `You're both losers lul.`;
-    // this.clearBoard();
   }
 
   clearBoard() {
