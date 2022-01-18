@@ -7,17 +7,23 @@ var ticTacToe = new Game(new Player(1,'X'), new Player(2,'O'));
 window.addEventListener('load', displayPlayer);
 gameBoard.addEventListener('click', playTurn);
 
-function displayPlayer() {
-  turnSection.innerHTML = `<h1>${ticTacToe.whosTurn()}<h1>`
+function displayPlayer(winOrDraw) {
+  if (typeof winOrDraw === 'string') {
+    turnSection.innerHTML = `<h1>${winOrDraw}<h1>`;
+  } else {
+    turnSection.innerHTML = `<h1>${ticTacToe.whosTurn()}<h1>`;
+  }
+
 }
 
 function playTurn() {
   if(event.target.id) {
     var id = parseInt(event.target.id);
-    ticTacToe.takeTurn(id);
+    var winOrDraw = ticTacToe.takeTurn(id);
     displayBoard();
+    displayPlayer(winOrDraw);
   }
-  displayPlayer();
+
 }
 
 function displayBoard() {
