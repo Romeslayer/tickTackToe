@@ -53,7 +53,7 @@ class Game {
         this.changeTurn();
       }
 
-      this.checkBoard();
+      return this.checkBoard();
     }
 
 
@@ -62,37 +62,36 @@ class Game {
   checkBoard() {
     var boardFull = false;
     if (this.board[0].value === this.board[1].value && this.board[0].value === this.board[2].value) {
-      this.win(0);
+      return this.win(0);
     }
 
     if (this.board[3].value === this.board[4].value && this.board[3].value === this.board[5].value) {
-      this.win(3);
+      return this.win(3);
     }
 
     if (this.board[6].value === this.board[7].value && this.board[6].value === this.board[8].value) {
-      this.win(6);
+      return this.win(6);
     }
 
     if (this.board[0].value === this.board[3].value && this.board[0].value === this.board[6].value) {
-      this.win(0);
+      return this.win(0);
     }
 
     if (this.board[1].value === this.board[4].value && this.board[1].value === this.board[7].value) {
-      this.win(1);
+      return this.win(1);
     }
 
     if (this.board[2].value === this.board[5].value && this.board[2].value === this.board[8].value) {
-      this.win(2);
+      return this.win(2);
     }
 
     if (this.board[0].value === this.board[4].value && this.board[0].value === this.board[8].value) {
-      this.win(0);
+      return this.win(0);
     }
 
     if (this.board[2].value === this.board[4].value && this.board[2].value === this.board[6].value) {
-      this.win(2);
+      return this.win(2);
     }
-
     //Need to check if all positions are filled.
     for (var i = 0; i < this.board.length; i++) {
       if (this.board[i].value) {
@@ -103,7 +102,7 @@ class Game {
       }
     }
 
-    if (boardFull) this.draw();
+    if (boardFull)  return this.draw();
 // To get the first row I = 0,1,2
 //  To get the second row I = 3,4,5
 // To get the third row I = 6,7,8
@@ -115,22 +114,21 @@ class Game {
 // To get left to right diagonal I = 0,4,8
 //To get right to left diagonal I = 2,4,6
   }
-
   win(position) {
     if (this.board[position].value === this.player1.token) {
       this.player1.wins.push(this.board);
-      console.log(`Congratulations ${this.player1.token} you won!`);
-      this.clearBoard();
+      return `Congratulations ${this.player1.token} you won!`;
+      // this.clearBoard();
     } else if (this.board[position].value === this.player2.token) {
       this.player2.wins.push(this.board);
-      console.log(`Congratulations ${this.player2.token} you won!`);
-      this.clearBoard();
+      return `Congratulations ${this.player2.token} you won!`;
+      // this.clearBoard();
     }
   }
 
   draw() {
-    console.log(`You're both losers lul.`);
-    this.clearBoard();
+    return `You're both losers lul.`;
+    // this.clearBoard();
   }
 
   clearBoard() {
