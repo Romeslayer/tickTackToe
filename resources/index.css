@@ -31,10 +31,30 @@ aside {
 
 .player-1-color {
   color: rgb(221,27,25);
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(221,27,25),
+    0 0 82px rgb(221,27,25),
+    0 0 92px rgb(221,27,25),
+    0 0 102px rgb(221,27,25),
+    0 0 151px rgb(221,27,25);
 }
 
 .player-2-color {
   color: rgb(58,97,242);
+  color: #fff;
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px rgb(58,97,242),
+    0 0 82px rgb(58,97,242),
+    0 0 92px rgb(58,97,242),
+    0 0 102px rgb(58,97,242),
+    0 0 151px rgb(58,97,242);
 }
 
 main {
