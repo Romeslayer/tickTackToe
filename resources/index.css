@@ -12,8 +12,17 @@ body {
 aside {
   height: 100%;
   width: 20%;
-  background-color: black;
   color: white;
+}
+
+.player-1 {
+  background: rgb(221,27,25);
+  background: linear-gradient(90deg, rgba(221,27,25,1) 0%, rgba(0,0,0,1) 70%);
+}
+
+.player-2 {
+  background: rgb(138,63,136);
+  background: linear-gradient(90deg, rgba(0,0,0,1) 30%, rgba(58,97,242,1) 100%);
 }
 
 main {
@@ -22,7 +31,8 @@ main {
 
 .player-turn {
     height: 30%;
-    background-color: red;
+    color: white;
+    background: rgb(0,0,0);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -31,7 +41,7 @@ main {
 .game-board {
     width: 100%;
     height: 70%;
-    background-color: purple;
+    background: rgb(0,0,0);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -45,4 +55,5 @@ main {
     border-style: solid;
     border-color: white;
     border-width: thin;
+    color: white;
 }
