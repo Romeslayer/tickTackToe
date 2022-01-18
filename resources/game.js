@@ -43,7 +43,7 @@ class Game {
   }
 
   takeTurn(position) {
-    if(!this.board[position].value) {
+    if (!this.board[position].value) {
       if (this.currentPlayer) {
         this.board[position].value = this.player1.token;
         this.changeTurn();
@@ -54,42 +54,27 @@ class Game {
 
       return this.checkBoard();
     }
-
-
   }
 
   checkBoard() {
     var boardFull = false;
-    if (this.board[0].value === this.board[1].value && this.board[0].value === this.board[2].value) {
-      return this.win(0);
-    }
 
-    if (this.board[3].value === this.board[4].value && this.board[3].value === this.board[5].value) {
+    if (this.board[0].value === this.board[1].value && this.board[0].value === this.board[2].value && this.board[0].value !== '') {
+      return this.win(0);
+    } else if (this.board[3].value === this.board[4].value && this.board[3].value === this.board[5].value && this.board[3].value !== '') {
       return this.win(3);
-    }
-
-    if (this.board[6].value === this.board[7].value && this.board[6].value === this.board[8].value) {
+    } else if (this.board[6].value === this.board[7].value && this.board[6].value === this.board[8].value && this.board[6].value !== '') {
       return this.win(6);
-    }
-
-    if (this.board[0].value === this.board[3].value && this.board[0].value === this.board[6].value) {
-      return this.win(0);
-    }
-
-    if (this.board[1].value === this.board[4].value && this.board[1].value === this.board[7].value) {
+    } else if (this.board[1].value === this.board[4].value && this.board[1].value === this.board[7].value && this.board[1].value !== '') {
       return this.win(1);
-    }
-
-    if (this.board[2].value === this.board[5].value && this.board[2].value === this.board[8].value) {
+    } else if (this.board[2].value === this.board[5].value && this.board[2].value === this.board[8].value && this.board[2].value !== '') {
       return this.win(2);
-    }
-
-    if (this.board[0].value === this.board[4].value && this.board[0].value === this.board[8].value) {
+    } else if (this.board[0].value === this.board[4].value && this.board[0].value === this.board[8].value && this.board[0].value !== '') {
       return this.win(0);
-    }
-
-    if (this.board[2].value === this.board[4].value && this.board[2].value === this.board[6].value) {
+    } else if (this.board[2].value === this.board[4].value && this.board[2].value === this.board[6].value && this.board[2].value !== '') {
       return this.win(2);
+    } else if (this.board[0].value === this.board[3].value && this.board[0].value === this.board[6].value && this.board[0].value !== '') {
+      return this.win(0);
     }
 
     for (var i = 0; i < this.board.length; i++) {
@@ -102,17 +87,8 @@ class Game {
     }
 
     if (boardFull)  return this.draw();
-// To get the first row I = 0,1,2
-//  To get the second row I = 3,4,5
-// To get the third row I = 6,7,8
-
-//To get the first column I = 0,3,6
-// To get second column I = 1,4,7
-// To get third column I = 2,5,8
-
-// To get left to right diagonal I = 0,4,8
-//To get right to left diagonal I = 2,4,6
   }
+
   win(position) {
     if (this.board[position].value === this.player1.token) {
       this.player1.wins.push(this.board);
@@ -124,7 +100,7 @@ class Game {
   }
 
   draw() {
-    return `You're both losers lul.`;
+    return `It's a Draw!`;
   }
 
   clearBoard() {
