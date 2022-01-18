@@ -10,6 +10,9 @@ gameBoard.addEventListener('click', playTurn);
 function displayPlayer(winOrDraw) {
   if (typeof winOrDraw === 'string') {
     turnSection.innerHTML = `<h1>${winOrDraw}<h1>`;
+    setTimeout(ticTacToe.clearBoard.bind(ticTacToe) ,4000);
+    setTimeout(displayBoard ,4000);
+    setTimeout(displayPlayer, 4000);
   } else {
     turnSection.innerHTML = `<h1>${ticTacToe.whosTurn()}<h1>`;
   }
@@ -17,7 +20,7 @@ function displayPlayer(winOrDraw) {
 }
 
 function playTurn() {
-  if(event.target.id) {
+  if (event.target.id) {
     var id = parseInt(event.target.id);
     var winOrDraw = ticTacToe.takeTurn(id);
     displayBoard();
