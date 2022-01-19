@@ -58,7 +58,6 @@ class Game {
 
   checkBoard() {
     var boardFull = false;
-
     if (this.board[0].value === this.board[1].value && this.board[0].value === this.board[2].value && this.board[0].value !== '') {
       return this.win(0);
     } else if (this.board[3].value === this.board[4].value && this.board[3].value === this.board[5].value && this.board[3].value !== '') {
