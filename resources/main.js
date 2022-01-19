@@ -16,10 +16,10 @@ function displayPlayers() {
 
 function displayPlayerTurn(winOrDraw) {
   if (typeof winOrDraw === 'string') {
-    turnSection.innerHTML = `<h1>${winOrDraw}<h1>`;
+    turnSection.innerHTML = `<h1 class="player-${!ticTacToe.currentPlayer ? '1' : '2'}-color">${winOrDraw}<h1>`;
     resetBoard();
   } else {
-    turnSection.innerHTML = `<h1>${ticTacToe.whosTurn()}<h1>`;
+    turnSection.innerHTML = `<h1 class="player-${ticTacToe.currentPlayer ? '1' : '2'}-color">${ticTacToe.whosTurn()}<h1>`;
   }
 
 }
@@ -35,7 +35,7 @@ function playTurn() {
 
 function displayBoard() {
   for (var i = 0; i < boardPositions.length; i++) {
-    boardPositions[i].innerHTML = `<p>${ticTacToe.board[i].value}</p>`;
+    boardPositions[i].innerHTML = `<p class="player-${ticTacToe.board[i].value === ticTacToe.player1.token ? '1' : '2'}-color">${ticTacToe.board[i].value}</p>`;
   }
 }
 
