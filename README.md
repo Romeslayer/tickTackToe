@@ -11,10 +11,15 @@ The Tic Tac Toe project aims to teach me how the DOM and Data Model works with J
 
 
 ## Project Information
-#### Code Style & Framework
+#### Technologies Used
 * JavaScript
 * HTML
 * CSS
+
+#### Code Architecture
+* The Data model used is the Game class instance that is created.
+* The instance of the Game is created using two instances of the Player class
+* The DOM is then updated using the Game instance's information.
 
 #### Code Sample
 
