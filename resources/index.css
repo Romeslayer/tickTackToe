@@ -19,6 +19,14 @@ aside {
   font-size: 2vw;
 }
 
+aside h1 {
+  margin-top: 10vh;
+}
+
+aside p {
+  margin-top: 1vh;
+}
+
 .player-1 {
   background: rgb(221,27,25);
   background: linear-gradient(90deg, rgba(221,27,25,1) 0%, rgba(0,0,0,1) 30%);
@@ -92,4 +100,8 @@ main {
     justify-content: center;
     align-items: center;
     font-size: 10vw;
+    box-shadow:
+      0 0 7px #fff,
+      0 0 10px #fff,
+      0 0 21px #fff;
 }
