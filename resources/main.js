@@ -40,8 +40,9 @@ function displayBoard() {
 }
 
 function resetBoard() {
+  displayPlayers();
   setTimeout(ticTacToe.clearBoard.bind(ticTacToe), 4000);
   setTimeout(displayBoard, 4000);
   setTimeout(displayPlayerTurn, 4000)
-  setTimeout(displayPlayers, 4000);
+
 }
